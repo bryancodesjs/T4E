@@ -7,6 +7,7 @@ import { FaExclamationCircle, FaSignInAlt } from "react-icons/fa";
 import ToastContainerCust from '../../Common/ToastContainerCust'
 import Utils from '../../Utils/Utils'
 import { MyClockLoader } from '../../Common/Loader'
+import t4elogo from '../../assets/img/tronforeveryonelogo.png'
 
 
 function Registration(props) {
@@ -125,33 +126,33 @@ function Registration(props) {
     }
 
     return (
-        <div className="" id="backofficewrap">
+        <div className="bg-clear" id="backofficewrap">
             <ToastContainerCust />
             <div className="container">
                 <div className="text-center logo-payment-wrap">
                     {
                         isModalOpen ?
                             <div className="logo-payment-link">
-                                <img className="logo-payment" src={xtronLogo} alt="logo xtron" />
+                                <img className="logo-login" src={t4elogo} alt="logo xtron" />
                             </div> :
                             <Link to={{
                                 pathname: "/",
                                 state: lang
                             }} className="logo-payment-link">
-                                <img className="logo-payment" src={xtronLogo} alt="logo xtron" />
+                                <img className="logo-login" src={t4elogo} alt="logo xtron" />
                             </Link>
                     }
 
                 </div>
                 <div className="row " id="">
-                    <div className="registration-main" style={{ width: "100%" }}>
-                        <div className="xwrap">
+                    <div className="registration-main d-flex justify-content-center" style={{ width: "100%" }}>
+                        <div className="xwrap2">
                             <div className="text-center registration-items">
                                 {
                                     lang === 'English' ?
-                                        <h2>Registration Area</h2>
+                                        <h2>Register</h2>
                                         :
-                                        <h2>Área de registro</h2>
+                                        <h2>Registro</h2>
                                 }
                                 {
                                     lang === 'English' ?
@@ -171,8 +172,8 @@ function Registration(props) {
                                         <input type="text" value={backOfficeID} className="sponsor-input-box text-center" onChange={(e) => SetBackOfficeID(e.target.value)} />
                                     </div>
                                 }
-                                <div className="registration-btn">
-                                    <button className="btn btn-success custombtn" onClick={() => registationSubmit()} disabled={isModalOpen} >{lang === 'English' ? "REGISTER" : "REGISTRO"}</button>
+                                <div className="registration-btn mb-2">
+                                    <button className="btn btn-success full-width custombtn" onClick={() => registationSubmit()} disabled={isModalOpen} >{lang === 'English' ? "REGISTER" : "REGISTRO"}</button>
                                 </div>
                                 {
                                     lang === 'English' ?

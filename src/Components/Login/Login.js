@@ -9,8 +9,7 @@ import ToastContainerCust from '../../Common/ToastContainerCust'
 import TronWeb from 'tronweb'
 import Utils from '../../Utils/Utils'
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-6MQ8JWRM63'); /*Unique Google Analytics ID*/
-ReactGA.pageview(window.location.pathname + window.location.search);
+import t4elogo from '../../assets/img/tronforeveryonelogo.png'
 
 
 const WEBSTORE_URL = 'https://chrome.google.com/webstore/detail/ibnejdfjmmkpcnlpebklmnkoeoihofec/';
@@ -93,9 +92,9 @@ function Login(props) {
         <p>
             {lang === 'English'
                 ?
-                <span>To access XTRON you must install TronLink.</span>
+                <span>To use this app you must install TronLink.</span>
                 :
-                <span>Para acceder a XTRON debe instalar TronLink.</span>
+                <span>Para utilizar esta app debe instalar TronLink.</span>
             }
 
         </p>
@@ -184,7 +183,7 @@ function Login(props) {
         }
     }
     return (
-        <div className="" id="backofficewrap">
+        <div className="bg-clear" id="backofficewrap">
             <ToastContainerCust />
             <div className="container">
                 <div className="text-center logo-payment-wrap">
@@ -192,18 +191,18 @@ function Login(props) {
                         pathname: "/",
                         state: lang
                     }} className="logo-payment-link">
-                        <img className="logo-payment" src={xtronLogo} alt="logo xtron" />
+                        <img className="logo-login" src={t4elogo} alt="logo tron for everyone" />
                     </Link>
                 </div>
-                <div className="row " id="">
-                    <div className="" style={{ width: "100%" }}>
-                        <div className="xwrap">
+                <div className="row d-flex justify-content-center " id="">
+                    <div className="">
+                        <div className="xwrap2">
                             <div className="text-center registration-items">
                                 {
                                     lang === 'English' ?
                                         <h2>Login Area</h2>
                                         :
-                                        <h2>Área de inicio de sesión</h2>
+                                        <h2>Iniciar sesión</h2>
                                 }
                                 {
                                     lang === 'English' ?
@@ -220,7 +219,7 @@ function Login(props) {
                                         <input id="customInput" name="customInputName" type="text" value={backOfficeID} className="sponsor-input-box text-center" onChange={(e) => SetBackOfficeID(e.target.value)} />
                                     </div>
                                     <div className="registration-btn">
-                                        <button className="btn btn-success custombtn" onClick={() => loginSubmit()} >LOGIN</button>
+                                        <button className="btn full-width btn-success custombtn" onClick={() => loginSubmit()} >LOGIN</button>
                                     </div>
                                     
                                 </div>
@@ -230,7 +229,7 @@ function Login(props) {
                                         <input id="customInput" name="customInputName" type="text" value={backOfficeID} className="sponsor-input-box text-center" onChange={(e) => SetBackOfficeID(e.target.value)} />
                                     </div>
                                     <div className="registration-btn">
-                                        <button className="btn btn-success custombtn" onClick={() => loginSubmit2()} >LOGIN</button>
+                                        <button className="btn full-width btn-success custombtn" onClick={() => loginSubmit2()} >LOGIN</button>
                                     </div>
                                     
                                 </div>

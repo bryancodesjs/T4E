@@ -1,42 +1,51 @@
 import React from 'react'
-import m1img from '../../assets/img/m1-mt.svg'
-import m2img from '../../assets/img/m2-mt.svg'
-import m1logo from '../../assets/img/m1.png'
-import m2logo from '../../assets/img/m2.png'
+import hero from '../../assets/img/hero tron for everyone.png'
+import leader from '../../assets/img/leader tron for everyone.png'
+import { FaCaretRight } from "react-icons/fa";
 function Matrix(props) {
     let lang = props.lang
     return (
         <div className="container mt-5" id="matrix">
             <div className="matrix_title text-center">
-                <h3 className="ctatext">
-                    {lang === 'English' ? "COMMISSIONS SYSTEM" : "SISTEMA DE COMISIONES"}
-                </h3>
-                <h2 className="whitext heading-title">
-                    {lang === 'English' ? "KNOW THE M1 AND M2 MATRICES" : "CONOCE LAS MATRICES M1 Y M2"}
+                <h2 className="heading-sub-title"> 
+               
+                    <span className="accent"><i>{lang === 'English'? "Choose":"Elige"}</i></span> {lang === 'English'? "your own commission path":"tu propia forma de comisiones"}
                 </h2>
+                <p className="">
+                    {lang === 'English' ? 
+                    "Earn as much as +$9,000 in TRX for every referral on the highest package" 
+                    : 
+                    "Gana hasta +$9,000 dólares en Tron por cada referido con la cuenta máxima"}
+                </p>
+                <p><i>
+                    {lang === 'English'?
+                    "All commissions are paid in TRX"
+                    :
+                    "Todas las comisiones se pagan en Tron (TRX)"
+                    }
+                </i></p>
+                <div className="matrix-background-heading">
+                    <h1>MAKE MONEY</h1>
+                </div>
             </div>
             <div className="matrix_boxes mt-5">
-                <div className="show-matrix" id="boxone">
-                    <div className="show-wrap">
-                        <img className="show-matrix-label" src={m1logo} alt="xtron M1 matrix logo"></img>
-                        <img className="show-img" src={m1img} alt="xtron M1 matrix graphic"></img>
-                        <div className="show-text">
-                            <h4> {lang === 'English' ? "You earn 100% commission for every user you refer to the M1 Matrix." : "Ganas una comisión de un 100% por cada usuario que refieras a tu matríz M1."}</h4>
-                        </div>
-                        
-                    </div>
-                    
+                <div className="text-center p-50 col-md-5 d-flex justify-content-start bg-gray box-radius align-items-center commission-path">
+                    <h2 className="">Hero</h2>
+                    <h3 className="heavy">100% COMMISSION</h3>
+                    <img className="commission-path-img" src={hero} alt="man holding his phone"/>
+                    <h3><FaCaretRight className="accent"/>Invite your friends and get paid from 100TRX to 204,800TRX when they sign up and upgrade their accounts.</h3>
                 </div>
-                <div className="show-matrix" id="boxtwo">
-                    <div className="show-wrap">
-                        <img className="show-matrix-label" src={m2logo} alt="xtron M2 matrix logo"></img>
-                        <img className="show-img" src={m2img} alt="xtron M2 matrix graphic"></img>
-                        <div className="show-text">
-                        <h4> {lang === 'English' ? "You earn 20% commission from 5 levels for every user you and your friends refer to the M2 Matrix." : "Ganas un 20% por 5 niveles por cada usuario directo o indirecto que se encuentre en tu matríz M2."}</h4>
-                            
-                        </div>
-                    </div>
+                <div className="text-center p-50 col-md-5 d-flex justify-content-start bg-gray box-radius align-items-center commission-path">
+                    <h2 className="">Leader</h2>
+                    <h3 className="heavy">20% COMMISSION</h3>
+                    <img className="commission-path-img" src={leader} alt="man and woman talking"/>
+                    <h3> <FaCaretRight className="accent"/> Build a team by helping your referrals bring more users and get a 20% cut everytime someone in your team buys a package.</h3>
                 </div>
+            </div>
+
+            <div className="matrix_title text-center mt-5">
+                <h2 className="heading-sub-title">What to promote</h2>
+                <div></div>
             </div>
         </div>
     )

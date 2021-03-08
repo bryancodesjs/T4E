@@ -82,23 +82,18 @@ function BackOfficeMain(props) {
     }
     return (
         <BackofficeContext.Provider value={{ backofficeDataM: backofficeData, dispatchM: dispatch }}>
-            <div className="" id="backofficewrap">
+            <div className="bg-clear" id="backofficewrap">
                 <MyNav />
                 <h2 className="text-center whitext mt-5">Dashboard</h2>
                 <div className="text-center logo-payment-wrap" style={{ marginTop: "0px" }}>
-                    {/*<Link to={{
-                        pathname: "/",
-                        state: lang
-                    }} className="logo-payment-link">
-                        <img className="logo-payment" src={xtronLogo} alt="logo xtron" />
-                    </Link>*/}
+                <BackOfficeSideDashboard lang={lang} />
+                </div>
+                <div className="container">
+                    asdsad
                 </div>
                 <div className="container">
                     <div className="row " id="backoffice_row">
-                        <div className="col-lg-3">
-                            <BackOfficeSideDashboard lang={lang} />
-                        </div>
-                        <div className="col-lg-9">
+                        <div className="col-lg-12">
                             <BackOfficeStatusFor5x lang={lang} />
                             <BackOfficeStatusFor12x lang={lang} />
                         </div>

@@ -4,7 +4,10 @@
   --lighter-accent:#ffa0a1;
   --purple-3:#1e1e58;
   --heading:#404145;
+  --bg-1:#fff;
+  --bg-2:#f4f4f4;
   --accent-bg-heading:#fff;
+  --box-radius:9px;
 }
 @media screen and (max-width:767px ) {
 
@@ -41,6 +44,15 @@
     width: 250px;
   }
 }
+.box-radius {
+  border-radius:var(--box-radius);
+}
+.bg-clear {
+  background-color: var(--bg-1) !important;
+}
+.bg-gray {
+  background-color: var(--bg-2) !important;
+}
 body {
   margin: 0px !important;
   height: 100% !important;
@@ -48,6 +60,34 @@ body {
   background: url(./assets/img/overlay.svg) no-repeat fixed center;*/
   background-size: cover;
   font-family: 'Montserrat', sans-serif !important;
+}
+.accent {
+  color:var(--accent);
+}
+.commission-path {
+  flex-direction: column;
+  margin: 5px;
+}
+.commission-path img {
+  width:350px;
+}
+.full-width {
+  width: 100% !important;
+}
+.logo-login {
+  width: 170px;
+}
+.custombtn-3 {
+  min-width: 80px;
+    border-radius: 40px !important;
+    font-size: 16px !important;
+    font-size: 16px !important;
+    border-radius: 4px !important;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+.heavy {
+  font-weight: 900;
 }
 .bg-accent {
   background-color:var(--accent);
@@ -74,6 +114,20 @@ body {
   position: relative;
   left: -2px;
 }
+.minicash {
+  position: relative;
+  left: -2px;
+  color: gray;
+}
+.matrix-background-heading {
+  position: absolute;
+  opacity: 0.09;
+  transform: translate(259px, -168px);
+  pointer-events: none;
+}
+.matrix-background-heading h1 {
+  font-size:80px !important;
+}
 .bg-accent h3 {
   color:var(--accent-bg-heading);
 }
@@ -85,14 +139,16 @@ body {
 }
 h1 {
   font-size: 40px !important;
-  color: #404145;
+  color: var(--heading);
 }
 h2 {
   font-size: 30px !important;
 }
+.p-50 {
+  padding:50px !important;
+}
 h3 {
   font-size: 20px !important;
-  font-weight: 400 !important;
 }
 h4 {
   font-size: 14px !important;
@@ -105,20 +161,17 @@ p {
 }
 /* GLOBAL STANDARDS */
 #lang {
-  background-color: #272761;
-    padding: 0px 17px;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 20px;
-
+  background-color: #eeeeee;
+  padding: 0px 9px;
+  color:var(--heading);
+  border: none;
+  border-radius: 20px;
 }
 #globalwrap {
   height: 100vh;
 }
 #backofficewrap {
   background-size: cover;
-  background-color: #090931;
   margin: 0px;
   overflow-y: scroll;
   height: 100vh;
@@ -162,16 +215,16 @@ p {
 }
 .switchbtn {
   min-width: 100px;
-    font-size: 18px;
-    background-color: #525277 ;
-    color: #9b96af ;
-    border: 2px solid #525277;
+    font-size: 14px;
+    background-color: #c8e1cd;
+    color: #28a745;
+    border: 2px solid #c8e1cd;
     font-weight: 600;
 }
 .switchbtn-active {
-  background-color: #623cea !important;
+  background-color: #28a745 !important;
     color: white !important;
-    border-color: #9d87e0 #412792 #412792 #9d87e0 !important;
+    border-color: #8bd99d #238d3b #238d3b #8bd99d !important;
 }
 .refreshbtn {
   z-index: 100;
@@ -407,9 +460,6 @@ details p {
 }
 details summary {
   outline: none;
-  color: #35ff69;
-  FONT-SIZE: 24PX;
-  font-weight: 600;
 }
 /*USER DEFINITION WRAP*/
 .userdefinition {
@@ -429,13 +479,19 @@ details summary {
 
 /*xwrap*/
 .xwrap {
-  background-color: #0d0d40;
+  background-color: #f9f9f9;
   padding: 25px;
   border-radius: 9px;
   /* border: 2px solid #35ff60;   */
   margin-bottom: 25px;
-  -webkit-box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 13%);
+  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 13%);
+}
+.xwrap2 {
+  padding: 30px 30px;
+    border-radius: 9px;
+    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 13%);
+    max-width: 350px;
 }
 /*Wallet Wrap*/
 .wallet_wrap p {
@@ -541,14 +597,14 @@ details summary {
 .basket_btn {
   width: 200px;
   height: 40px;
-  font-size: 20px !important;
+  font-size: 14px !important;
 }
 
 .basket_active {
-  background-color: #623cea !important;
+  /*background-color: #623cea !important;
 
   -webkit-box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.5);*/
 }
 
 .box_number {
@@ -579,18 +635,18 @@ details summary {
 .position {
   width: 30px;
   height: 30px;
-  border: 1px solid #7cbc8c; /*THIS IS THE DEFAULT COLOR FOR UNNOCUPIED POSITIONS*/
+  border: 1px solid #7cbc8c;
   border-radius: 50%;
   z-index: 2;
-  background-color: #0d0d40;
+  background-color: #f9f9f9;
 }
 .position_reset {
   width: 30px;
-  height: 30px;
-  border: 1px solid #7cbc8c; /*THIS IS THE DEFAULT COLOR FOR UNNOCUPIED POSITIONS*/
-  border-radius: 5px;
-  z-index: 2;
-  background-color: #0d0d40;
+    height: 30px;
+    border: 1px solid #7cbc8c;
+    border-radius: 5px;
+    z-index: 2;
+    background-color: #f9f9f9;
 }
 .box_subpositions {
   display: flex;
@@ -637,8 +693,8 @@ details summary {
     font-size: 20px;
 }
 .position_active {
-  background-color: #35ff69;
-  border-color: #35ff69 !important;
+  background-color: #37d399;
+  border-color: #37d399 !important;
 }
 .position_reset i {
   position: relative;
@@ -757,21 +813,14 @@ details summary {
   bottom: 599px;
   transform: rotate(-40deg);
 }
-#backoffice_row {
-  margin-top: 50px;
-}
-
 #title_container_img {
   width: 100px;
 }
-
 .basket {
   color: #fff !important;
   background-color: #5c8290 !important;
 }
-
 /* modal CSS  */
-
 .flex-container {
   display: -webkit-box !important;
   display: -moz-box !important;
@@ -818,7 +867,11 @@ details summary {
 .modal-content {
   background-color: #23203a !important;
 }
-
+.btn-info {
+  color: #fff !important;
+    background-color: #37d399 !important;
+    border-color: #37d399 !important;
+}
 .cus-modal-header {
   font-size: 20px;
   color: #ffffff;
@@ -845,7 +898,6 @@ details summary {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
 }
 
 .registration-input {
@@ -856,13 +908,14 @@ details summary {
 
 .sponsor-input-box {
   width: 200px;
-  background-color: #31315a;
-  color: white;
-  font-size: 20px;
-  border: 2px solid #080819;
-  padding-top: 7px;
-  padding-bottom: 4px;
-  border-radius: 5px;
+    background-color: #dedede;
+    font-size: 20px;
+    border: 1px solid #d8d8d8;
+    padding-top: 7px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .h20 {
