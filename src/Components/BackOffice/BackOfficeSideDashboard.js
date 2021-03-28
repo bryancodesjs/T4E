@@ -138,7 +138,7 @@ function BackOfficeSideDashboard(props) {
                                         <span><strong>{parseInt(UserId)}</strong></span>
                                         }
                             </h2>
-                            <h4 className="text-left">Member</h4>
+                            <h3 className="text-left">Member</h3>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ function BackOfficeSideDashboard(props) {
                         </div>
                         <div className="text-wrap">
                             <h2>{backofficeContextL.backofficeDataM.total5x + x12balanceTRX} <small>TRX</small></h2>
-                            <h4 className="text-left">${getFlooredFixed(((backofficeContextL.backofficeDataM.total5x + x12balanceTRX) * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
+                            <h3 className="text-left secondary-text">${getFlooredFixed(((backofficeContextL.backofficeDataM.total5x + x12balanceTRX) * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h3>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@ function BackOfficeSideDashboard(props) {
                                 <h2>{backofficeContextL.backofficeDataM.total5x} TRX</h2>
                                 <h2 className="whitext"><FaUsers color="#ff6e81" /> {parseInt(partnersCount)}</h2>
                             </div>
-                            <h4 className="text-left">${getFlooredFixed((backofficeContextL.backofficeDataM.total5x * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
+                            <h3 className="text-left secondary-text">${getFlooredFixed((backofficeContextL.backofficeDataM.total5x * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h3>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@ function BackOfficeSideDashboard(props) {
                                 <h2>{x12balanceTRX} TRX</h2>
                                 <h2 className="whitext"><FaUsers color="#ff6e81" /> {parseInt(backofficeContextL.backofficeDataM.partnerCountM2)}</h2>
                             </div>
-                            <h4 className="text-left">${getFlooredFixed((x12balanceTRX * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
+                            <h3 className="text-left secondary-text">${getFlooredFixed((x12balanceTRX * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h3>
                         </div>
                     </div>
                 </div>

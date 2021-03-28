@@ -8,7 +8,8 @@ import Loader from '../../Common/Loader'
 import { MyClockLoader } from '../../Common/Loader'
 import { FaUsers } from "react-icons/fa";
 import { FiRefreshCcw } from "react-icons/fi";
-
+import tron32xfff from '../../assets/img/tron32x_fff.png'
+import upgradeIcon from '../../assets/img/upgrade-tron-alliance-level.svg'
 
 let toggleLevel = true
 
@@ -163,14 +164,14 @@ function SubPart5X({ level, ammount, lang }) {
         }
     }
 
-    const getActiveLevels = [...Array(numberOfActiveLevels)].map((e, i) => <div key={i} className="position position_active"></div>)
+    const getActiveLevels = [...Array(numberOfActiveLevels)].map((e, i) => <div key={i} className="position position_active"><img src={tron32xfff} alt="trx tron logo"/></div>)
     const getNonActiveLevels = [...Array(4 - numberOfActiveLevels)].map((e, i) => <div key={i} className="position"></div>)
     const getBuyIcon = (level) => {
         if (isBuyEnable) {
-            return (<i className="buy-icon5X buy-icon" alt="buyIcon" onClick={() => FunBuyLevel(level, ammount)} ></i>)
+            return (<i className="buy-icon5X buy-icon" alt="buyIcon" onClick={() => FunBuyLevel(level, ammount)} ><img src={upgradeIcon} alt="upgrade your license"/></i>)
         }
         else {
-            return (<i className="buy-icon5X" alt="buyIcon"></i>)
+            return (<i className="buy-icon5X" alt="buyIcon"><img src={upgradeIcon} alt="upgrade your license"/></i>)
         }
     }
 
@@ -183,12 +184,14 @@ function SubPart5X({ level, ammount, lang }) {
                 <div className={isBuyVisible ? "box_basket" : "box_basket activeLevel"} style={{ position: "relative" }}>
                     <div className="box_number" id="box_number">{level}</div>
                     {isBuyVisible ? getBuyIcon(level) : null}
-                    <button className="btn btn-info basket_btn basket_active">{ammount} trx</button>
+                    <button className="btn btn-info basket_btn basket_active">
+                        <span className="level-amount">{ammount} trx</span>
+                    </button>
                 </div>
-                <div className="box_positions">
+                <div className="box_positions mt-3">
                     {getActiveLevels}
                     {getNonActiveLevels}
-                    <div className="position position_reset" />
+                    <div className="d-flex align-items-center"><FiRefreshCcw color="#000" size={25} /></div>
                 </div>
                 {/*<div className="flow_lines">
                     <div className="flow_line line_one"></div>
@@ -200,13 +203,13 @@ function SubPart5X({ level, ammount, lang }) {
                 </div>*/}
                 {!isBuyVisible ?
                     <div className="reload-data">
-                        <div>
-                            <span style={{ color: "white", fontSize: "20px", paddingRight: 5 }}>{(5 * reinvestCount) + numberOfActiveLevels}</span>
-                            <FaUsers color="#35FF69" size={25} />
+                        <div className="mr-2">
+                            <span style={{ color: "white", fontSize: "18px", paddingRight: 5 }}>{(5 * reinvestCount) + numberOfActiveLevels}</span>
+                            <FaUsers color="#fff" size={25} />
                         </div>
                         <div>
-                            <span style={{ color: "white", fontSize: "20px", paddingRight: 5 }}>{reinvestCount}</span>
-                            <FiRefreshCcw color="#35FF69" size={25} />
+                            <span style={{ color: "white", fontSize: "18px", paddingRight: 5 }}>{reinvestCount}</span>
+                            <FiRefreshCcw color="#fff" size={25} />
                         </div>
 
                     </div>
