@@ -53,13 +53,19 @@
 .bg-gray {
   background-color: var(--bg-2) !important;
 }
+.icon-wrap {
+  margin-right: 1rem;
+}
+.dash-card .inner {
+  border-radius: 10px;
+}
 body {
   margin: 0px !important;
   height: 100% !important;
   /*background-color: #010129 !important;
   background: url(./assets/img/overlay.svg) no-repeat fixed center;*/
   background-size: cover;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Rajdhani', sans-serif !important;
 }
 .accent {
   color:var(--accent);
@@ -479,18 +485,13 @@ details summary {
 
 /*xwrap*/
 .xwrap {
-  background-color: #f9f9f9;
-  padding: 25px;
-  border-radius: 9px;
+  border-radius: 10px;
   /* border: 2px solid #35ff60;   */
   margin-bottom: 25px;
-  -webkit-box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 13%);
-  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 13%);
 }
 .xwrap2 {
   padding: 30px 30px;
     border-radius: 9px;
-    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 13%);
     max-width: 350px;
 }
 /*Wallet Wrap*/

@@ -7,11 +7,8 @@ import { FiRefreshCcw } from "react-icons/fi";
 function BackOfficeStatusFor5x(props) {
     return (
         <>
-            <div className="xwrap" style={{ paddingBottom: 45 }}>
-                {/* <!--X5 MATRIX GROUP--> */}
-                <div className="title_container">
-                    <img src={x5matrix} id="title_container_img" alt="x5matrix" />
-                </div>
+            <div className="xwrap bg-clear border">
+                {/* <!--Direct License Levels--> */}
                 <div className="boxes_wraper">
                     <SubPart5X level={1} ammount={"200"} lang={props.lang && props.lang} />
                     <SubPart5X level={2} ammount={"400"} lang={props.lang && props.lang} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import t4elogo from '../../assets/img/tronforeveryonelogo.png'
+import t4elogo from '../../assets/img/tron alliance logo.png'
 import { Link } from 'react-router-dom';
 import { FaPowerOff, FaRegFileAlt, FaDollarSign } from "react-icons/fa";
 

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { FaExternalLinkAlt } from "react-icons/fa";
 import headimg from '../../assets/img/waifu.png'
 import minitron from '../../assets/img/mini-tron.png'
-import t4elogo from '../../assets/img/tronforeveryonelogo.png'
+import t4elogo from '../../assets/img/tron alliance logo.png'
 import { Link } from 'react-router-dom';
 import { FaPowerOff } from "react-icons/fa";
 import usaflag from '../../assets/img/usaflag.png'
@@ -92,7 +92,7 @@ function LandingMian(props) {
                 <div className="heading-content d-flex flex-row">
                     <div className="col-md-6 left-heading text-left">
                     <h1 className="mt-5 whitext heading-title"><strong>
-                        {lang === 'English' ? "Earn money by sharing opportunities" 
+                        {lang === 'English' ? "Invest once. Earn TRX Forever" 
                         : 
                         "Gana compartiendo oportunidades"}</strong></h1>
                     <h3 className="whitext lightweight">

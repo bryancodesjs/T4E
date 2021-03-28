@@ -82,22 +82,16 @@ function BackOfficeMain(props) {
     }
     return (
         <BackofficeContext.Provider value={{ backofficeDataM: backofficeData, dispatchM: dispatch }}>
-            <div className="bg-clear" id="backofficewrap">
+            <div className="bg-gray" id="backofficewrap">
                 <MyNav />
                 <h2 className="text-center whitext mt-5">Dashboard</h2>
-                <div className="text-center logo-payment-wrap" style={{ marginTop: "0px" }}>
-                <BackOfficeSideDashboard lang={lang} />
+                <div className="container mx-auto d-flex flex-row flex-wrap">
+                    <BackOfficeSideDashboard lang={lang} />
                 </div>
-                <div className="container">
-                    asdsad
-                </div>
-                <div className="container">
-                    <div className="row " id="backoffice_row">
-                        <div className="col-lg-12">
-                            <BackOfficeStatusFor5x lang={lang} />
-                            <BackOfficeStatusFor12x lang={lang} />
-                        </div>
-                    </div>
+                <h2 className="text-center whitext mt-5">My Direct License</h2>
+                <div className="container d-flex flex-column">
+                    <BackOfficeStatusFor5x lang={lang} />
+                    <BackOfficeStatusFor12x lang={lang} />
                     <div className="d-flex justify-content-center refresh-wrap">
                         <h3 className="whitext">App stuck or unresponsive?</h3>
                     <button id="refreshCog" className="refreshbtn" onClick={() => refresh()}>< FaCog/><span id="refresh1">Refresh</span></button>

@@ -7,7 +7,7 @@ import { FaExclamationCircle, FaSignInAlt } from "react-icons/fa";
 import ToastContainerCust from '../../Common/ToastContainerCust'
 import Utils from '../../Utils/Utils'
 import { MyClockLoader } from '../../Common/Loader'
-import t4elogo from '../../assets/img/tronforeveryonelogo.png'
+import t4elogo from '../../assets/img/tron alliance logo.png'
 
 
 function Registration(props) {

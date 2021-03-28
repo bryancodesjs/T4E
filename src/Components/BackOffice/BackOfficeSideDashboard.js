@@ -3,7 +3,7 @@ import tron32x from '../../assets/img/tron32x.png'
 import x5matrix from '../../assets/img/m1.png'
 import x12matrix from '../../assets/img/m2.png'
 import { useState } from 'react'
-import { FaUsers, FaRegCopy } from "react-icons/fa";
+import { FaUsers, FaRegUserCircle } from "react-icons/fa";
 import { BackofficeContext } from './BackOfficeMain'
 import TronWeb from 'tronweb'
 import Utils from '../../Utils/Utils'
@@ -22,7 +22,7 @@ function copyAffiliateLink() {
 function BackOfficeSideDashboard(props) {
 
     const lang = props.lang
-       
+
     const backofficeContextL = useContext(BackofficeContext)
 
     const [UserId, setUserId] = useState(0)
@@ -36,7 +36,7 @@ function BackOfficeSideDashboard(props) {
 
 
     useEffect(async () => {
-        axios.get(`https://api.coinlore.net/api/ticker/?id=2713`)
+        axios.get(`https://api.coinlore.com/api/ticker/?id=2713`)
             .then(res => {
                 backofficeContextL.dispatchM({ type: 'SetusdValue', payload: res.data[0].price_usd })
             })
@@ -121,51 +121,109 @@ function BackOfficeSideDashboard(props) {
     }
 
     return (
-        <>
-            <div className="userdef xwrap">
+        <>  
+            {/*User Info*/}
+            <div className="col-lg-3 dash-card">
+                <div className="h-100 d-flex border inner bg-clear mr-3 flex-column p-3">
+                    <h3 className="text-left">Title</h3>
+                    <div className="d-flex">
+                        <div className="icon-wrap">
+                            <h2><FaRegUserCircle/></h2>
+                        </div>
+                        <div className="text-wrap">
+                            <h2>User <span><strong>{parseInt(UserId)}</strong></span></h2>
+                            <h4 className="text-left">Member</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/*Total Earnings*/}
+            <div className="col-lg-3 dash-card">
+                <div className="h-100 d-flex border inner bg-clear mr-3 flex-column p-3">
+                    <h3 className="text-left">Total Earnings</h3>
+                    <div className="d-flex">
+                        <div className="icon-wrap">
+                            <h2><img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
+                        </div>
+                        <div className="text-wrap">
+                            <h2>{backofficeContextL.backofficeDataM.total5x + x12balanceTRX} <small>TRX</small></h2>
+                            <h4 className="text-left">${getFlooredFixed(((backofficeContextL.backofficeDataM.total5x + x12balanceTRX) * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/*Direct Earnings*/}
+            <div className="col-lg-3 dash-card">
+                <div className="h-100 d-flex border inner bg-clear mr-3 flex-column p-3">
+                    <h3 className="text-left">Direct Earnings</h3>
+                    <div className="d-flex">
+                        <div className="icon-wrap">
+                            <h2><img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
+                        </div>
+                        <div className="text-wrap">
+                            <h2>{backofficeContextL.backofficeDataM.total5x} TRX</h2>
+                            <h4 className="text-left">${getFlooredFixed((backofficeContextL.backofficeDataM.total5x * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/*Team Earnings*/}
+            <div className="col-lg-3 dash-card">
+                <div className="h-100 d-flex border inner bg-clear flex-column p-3 ">
+                    <h3 className="text-left">Team Earnings</h3>
+                    <div className="d-flex">
+                        <div className="icon-wrap">
+                            <h2><img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
+                        </div>
+                        <div className="text-wrap">
+                            <h2>{x12balanceTRX} TRX</h2>
+                            <h4 className="text-left">${getFlooredFixed((x12balanceTRX * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {/*
+            <div className="col-lg-3">
                 <TostContainer />
                 <div className="userdefinition">
                     <div className="paymentlogo">
                         {
                             lang === "English"
-                                ? 
+                                ?
                                 <h3 className="whitext">MY ID: <span className="ctatext">{parseInt(UserId)}</span></h3>
                                 :
                                 <h3 className="whitext">MI ID: <span className="ctatext">{parseInt(UserId)}</span></h3>
                         }
-
                     </div>
-                    {/* <div className="userinfo text-right">
-                        <h4 className="whitext">{parseInt(partnersCount)} <FaUsers color="#35FF69" /></h4>
-                    </div> */}
                 </div>
                 {
-                        lang === 'English' ?
-                            <h3 className="whitext">Total Earnings</h3>
-                            :
-                            <h3 className="whitext">Ganancias Totales</h3>
-                    }
+                    lang === 'English' ?
+                        <h3 className="whitext">Total Earnings</h3>
+                        :
+                        <h3 className="whitext">Ganancias Totales</h3>
+                }
                 <h2 className="text-left ctatext">
                     $ {getFlooredFixed(((backofficeContextL.backofficeDataM.total5x + x12balanceTRX) * backofficeContextL.backofficeDataM.usdValue), 2)} USD
                 </h2>
                 <h2 className="subtext earning_amount text-left">{backofficeContextL.backofficeDataM.total5x + x12balanceTRX} TRX <img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
                 <hr className="custom_hr" />
                 <div className="matrix_earnings" style={{ paddingTop: "0" }}>
-                    {/* <img className="matrix_logo" src={x5matrix} alt="x5matrix" /> */}
                     <div style={{ display: "flex" }}>
                         <img className="matrix_logo" src={x5matrix} alt="x5matrix" />
                         <div className="userinfo text-right" style={{ marginTop: "20%" }}>
                             <h3 className="whitext">{parseInt(partnersCount)} <FaUsers color="#35FF69" /></h3>
                         </div>
                     </div>
-
                     {
                         lang === 'English' ?
                             <h3 className="whitext">Earnings</h3>
                             :
-                            <h3 className="whitext">Ganancias</h3>
+                            <h3 className="whitext">Ganancias M1</h3>
                     }
-
                     <div className="earning_amount_container">
                         <h2 className="ctatext earning_amount">$ {getFlooredFixed((backofficeContextL.backofficeDataM.total5x * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h2>
                     </div>
@@ -173,7 +231,6 @@ function BackOfficeSideDashboard(props) {
                 </div>
                 <hr className="custom_hr" />
                 <div className="matrix_earnings" style={{ paddingTop: "0" }}>
-                    {/* <img className="matrix_logo" src={x12matrix} alt="x12matrix" /> */}
                     <div style={{ display: "flex" }}>
                         <img className="matrix_logo" src={x12matrix} alt="x12matrix" />
                         <div className="userinfo text-right" style={{ marginTop: "20%" }}>
@@ -186,14 +243,15 @@ function BackOfficeSideDashboard(props) {
                             :
                             <h3 className="whitext">Ganancias</h3>
                     }
-
                     <div className="earning_amount_container">
                         <h2 className="ctatext earning_amount">$ {getFlooredFixed((x12balanceTRX * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h2>
                     </div>
                     <h2 className="earning_amount_trx subtext">{x12balanceTRX} TRX  <img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
                 </div>
             </div>
-            <div className="affiliate_wrap xwrap">
+            */}
+
+            {/*<div className="affiliate_wrap xwrap">
                 <div className="affiliate_heading">
                     {
                         lang === 'English' ?
@@ -201,14 +259,12 @@ function BackOfficeSideDashboard(props) {
                             :
                             <h3 className="ctatext">Enlace de afiliado</h3>
                     }
-
                     <h3 className="whitext">{parseInt(partnersCount)} <FaUsers color="#35FF69" /></h3>
                 </div>
                 <div className="link_container">
-                    {/* <input type="text" value={`${process.env.REACT_APP_URL}/#/registration/${parseInt(UserId)}`} id="refLink" readOnly /> */}
                     <input type="text" value={`https://xtron.online/#/registration/${parseInt(UserId)}`} id="refLink" readOnly />
                     <FaRegCopy className="ctatext" onClick={copyAffiliateLink} />
-                </div>
+                </div> 
             </div>
             <div className="wallet_wrap xwrap">
                 {
@@ -227,8 +283,7 @@ function BackOfficeSideDashboard(props) {
                         <h3 className="ctatext">Dirección del contrato:</h3>
                 }
                 <a href={`https://tronscan.org/#/contract/TWDECXnA4oAGrDYRNS7ex1izx3Mgys9SRp/transactions`} rel="noreferrer" target="_blank"> <p className="whitext">TWDECXnA4oAGrDYRNS7ex1izx3Mgys9SRp</p></a>
-                {/*<a href={`https://shasta.tronscan.org/#/contract/${process.env.REACT_APP_CONTRACT_ADDRESS}/code`} target="_blank"> <p className="whitext">{process.env.REACT_APP_CONTRACT_ADDRESS}</p></a>*/}
-            </div>
+            </div>*/}
         </>
     )
 }

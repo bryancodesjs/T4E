@@ -9,7 +9,7 @@ import ToastContainerCust from '../../Common/ToastContainerCust'
 import TronWeb from 'tronweb'
 import Utils from '../../Utils/Utils'
 import ReactGA from 'react-ga';
-import t4elogo from '../../assets/img/tronforeveryonelogo.png'
+import t4elogo from '../../assets/img/tron alliance logo.png'
 
 
 const WEBSTORE_URL = 'https://chrome.google.com/webstore/detail/ibnejdfjmmkpcnlpebklmnkoeoihofec/';
