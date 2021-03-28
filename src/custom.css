@@ -2,12 +2,14 @@
 :root {
   --accent:#f2282b;
   --lighter-accent:#ffa0a1;
+  --primary-text:#272727;
   --purple-3:#1e1e58;
   --heading:#404145;
   --bg-1:#fff;
   --bg-2:#f4f4f4;
   --accent-bg-heading:#fff;
   --box-radius:9px;
+  --secondary-text:#b6b6b6;
 }
 @media screen and (max-width:767px ) {
 
@@ -494,6 +496,28 @@ details summary {
     border-radius: 9px;
     max-width: 350px;
 }
+@-webkit-keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: rotate 0.6s linear infinite;
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    color: var(--secondary-text);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*Wallet Wrap*/
 .wallet_wrap p {
   overflow: hidden;
@@ -598,7 +622,7 @@ details summary {
 .basket_btn {
   width: 200px;
   height: 40px;
-  font-size: 14px !important;
+  font-size: 18px !important;
 }
 
 .basket_active {
@@ -610,10 +634,15 @@ details summary {
 
 .box_number {
   position: relative;
-  left: 15px;
-  top: 25px;
-  color: #001029;
-  font-weight: 900;
+    left: -8px;
+    top: 30px;
+    color: var(--bg-1);
+    /* font-weight: 900; */
+    height: 20px;
+    width: 20px;
+    background-color: var(--primary-text);
+    border-radius: 10px;
+    padding-left: 5px;
 }
 .box_number_x12 {
   position: relative;
@@ -870,8 +899,8 @@ details summary {
 }
 .btn-info {
   color: #fff !important;
-    background-color: #37d399 !important;
-    border-color: #37d399 !important;
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
 }
 .cus-modal-header {
   font-size: 20px;

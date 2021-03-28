@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from 'react'
 import tron32x from '../../assets/img/tron32x.png'
 import x5matrix from '../../assets/img/m1.png'
-import x12matrix from '../../assets/img/m2.png'
+import spinner from '../../assets/img/spinner.png'
 import { useState } from 'react'
-import { FaUsers, FaRegUserCircle } from "react-icons/fa";
+import { FaUsers, FaRegUserCircle, FaCircleNotch } from "react-icons/fa";
 import { BackofficeContext } from './BackOfficeMain'
 import TronWeb from 'tronweb'
 import Utils from '../../Utils/Utils'
@@ -125,13 +125,19 @@ function BackOfficeSideDashboard(props) {
             {/*User Info*/}
             <div className="col-lg-3 dash-card">
                 <div className="h-100 d-flex border inner bg-clear mr-3 flex-column p-3">
-                    <h3 className="text-left">Title</h3>
+                    <h3 className="text-left">Welcome!</h3>
                     <div className="d-flex">
                         <div className="icon-wrap">
                             <h2><FaRegUserCircle/></h2>
                         </div>
                         <div className="text-wrap">
-                            <h2>User <span><strong>{parseInt(UserId)}</strong></span></h2>
+                            <h2>User 
+                                        { parseInt(UserId) === 0 ?
+                                        <img className="loading-spinner" src={spinner}/>
+                                        :
+                                        <span><strong>{parseInt(UserId)}</strong></span>
+                                        }
+                            </h2>
                             <h4 className="text-left">Member</h4>
                         </div>
                     </div>
@@ -162,8 +168,11 @@ function BackOfficeSideDashboard(props) {
                         <div className="icon-wrap">
                             <h2><img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
                         </div>
-                        <div className="text-wrap">
-                            <h2>{backofficeContextL.backofficeDataM.total5x} TRX</h2>
+                        <div className="text-wrap w-100">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <h2>{backofficeContextL.backofficeDataM.total5x} TRX</h2>
+                                <h2 className="whitext"><FaUsers color="#ff6e81" /> {parseInt(partnersCount)}</h2>
+                            </div>
                             <h4 className="text-left">${getFlooredFixed((backofficeContextL.backofficeDataM.total5x * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
                         </div>
                     </div>
@@ -178,8 +187,11 @@ function BackOfficeSideDashboard(props) {
                         <div className="icon-wrap">
                             <h2><img src={tron32x} className="tron_currency" alt="tron32x" /></h2>
                         </div>
-                        <div className="text-wrap">
-                            <h2>{x12balanceTRX} TRX</h2>
+                        <div className="text-wrap w-100">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <h2>{x12balanceTRX} TRX</h2>
+                                <h2 className="whitext"><FaUsers color="#ff6e81" /> {parseInt(backofficeContextL.backofficeDataM.partnerCountM2)}</h2>
+                            </div>
                             <h4 className="text-left">${getFlooredFixed((x12balanceTRX * backofficeContextL.backofficeDataM.usdValue), 2)} USD</h4>
                         </div>
                     </div>

@@ -190,14 +190,14 @@ function SubPart5X({ level, ammount, lang }) {
                     {getNonActiveLevels}
                     <div className="position position_reset" />
                 </div>
-                <div className="flow_lines">
+                {/*<div className="flow_lines">
                     <div className="flow_line line_one"></div>
                     <div className="flow_line line_two"></div>
                     <div className="flow_line line_three"></div>
                     <div className="flow_line line_four"></div>
                     <div className="flow_line line_five"></div>
                     <div className="flow_line line_six"></div>
-                </div>
+                </div>*/}
                 {!isBuyVisible ?
                     <div className="reload-data">
                         <div>
