@@ -67,7 +67,7 @@ function BackOfficeMain(props) {
 
     useEffect(() => {
         (async function () {
-            document.title = "XTRON"
+            document.title = "Tron Alliance - Dashboard"
             if (props.location.state && typeof props.location.state !== 'undefined') {
                 dispatch({ type: 'setloginUser', payload: props.location.state.id })
             }

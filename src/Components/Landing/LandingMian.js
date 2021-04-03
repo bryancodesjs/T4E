@@ -13,7 +13,7 @@ import usaflag from '../../assets/img/usaflag.png'
 function LandingMian(props) {
     const propslang = props.location && props.location.state
     useEffect(() => {
-        document.title = "Tron For Everyone"
+        document.title = "Tron Alliance"
     }, []);
 
     const [lang, setLang] = useState(propslang === "Spanish" ? "Spanish" : "English")
