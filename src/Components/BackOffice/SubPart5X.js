@@ -177,7 +177,7 @@ function SubPart5X({ level, ammount, lang }) {
 
     return (
         <>
-            <div className="matrix_box">
+            <div className="matrix_box h-119" >
                 <Loader active={isModalOpen} />
                 <MyClockLoader active={buyLevelLoader} />
                 <ToastContainerCust />
@@ -188,7 +188,7 @@ function SubPart5X({ level, ammount, lang }) {
                         <span className="level-amount">{ammount} trx</span>
                     </button>
                 </div>
-                <div className="box_positions mt-3">
+                <div className="box_positions mt-3 mb-3">
                     {getActiveLevels}
                     {getNonActiveLevels}
                     <div className="d-flex align-items-center"><FiRefreshCcw color="#000" size={25} /></div>

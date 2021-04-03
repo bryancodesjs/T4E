@@ -7,6 +7,8 @@ import Utils from '../../Utils/Utils'
 import Loader from '../../Common/Loader'
 import { MyClockLoader } from '../../Common/Loader'
 import upgradeIcon from '../../assets/img/upgrade-tron-alliance-level.svg'
+import { FiRefreshCcw } from "react-icons/fi";
+import tron32xfff from '../../assets/img/tron32x_fff.png'
 
 let toggleLevel = true
 
@@ -163,7 +165,7 @@ function SubPart12X({ level, ammount, lang }) {
         }
     }
 
-    const getActiveLevels = [...Array(numberOfActiveLevels)].map((e, i) => <div key={i} className="position position_active"></div>)
+    const getActiveLevels = [...Array(numberOfActiveLevels)].map((e, i) => <div key={i} className="position position_active"><img src={tron32xfff} alt="trx tron logo"/></div>)
     const getNonActiveLevels = [...Array(3 - numberOfActiveLevels)].map((e, i) => <div key={i} className="position"></div>)
     const getSubActiveLevels = [...Array(numberOfSubActiveLevels)].map((e, i) => <div key={i} className="subposition position_active"></div>)
     const getNonSubActiveLevels = [...Array(8 - numberOfSubActiveLevels)].map((e, i) => <div key={i} className="subposition"></div>)
@@ -186,10 +188,10 @@ function SubPart12X({ level, ammount, lang }) {
                 {getActiveLevels}
                 {getNonActiveLevels}
             </div>
-            <div className="box_subpositions">
+            <div className="box_subpositions mt-2 mb-3">
                 {getSubActiveLevels}
                 {getNonSubActiveLevels}
-                <div className="subposition reset-bg"></div>
+                <div className="d-flex align-items-center"><FiRefreshCcw color="#000" size={20} /></div>
             </div>
             {/*<div className="flow_lines">
                 <div className="flow_line line_one_x12"></div>

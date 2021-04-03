@@ -3,6 +3,7 @@ import x5matrix from '../../assets/img/m1.png'
 import SubPart5X from './SubPart5X'
 import { FaUsers } from "react-icons/fa";
 import { FiRefreshCcw } from "react-icons/fi";
+import tron32xfff from '../../assets/img/tron32x_fff.png'
 
 function BackOfficeStatusFor5x(props) {
     return (
@@ -24,11 +25,11 @@ function BackOfficeStatusFor5x(props) {
                     <SubPart5X level={12} ammount={"409600"} lang={props.lang && props.lang} />
                 </div>
                 <div className="Tips p-4">
-                    <div className="d-flex align-items-center tip"><div className="mr10 position mini-position position_active" /> You have earned commission from this slot.</div>
+                    <div className="d-flex align-items-center tip"><div className="mr10 position mini-position position_active"><img src={tron32xfff} alt="trx tron logo"/></div> You have earned a commission from this slot</div>
                     <div className="d-flex align-items-center tip"><div className="mr10 position mini-position" /> Available slot.</div>
-                    <div className="d-flex align-items-center tip"><div className="mr10 position mini-position position_reset" /> Once this position is filled, all slots will clear out.</div>
-                    <div className="d-flex align-items-center tip"><FaUsers className="mr10" color="#35FF69" size={25} /> Users you have earned from.</div>
-                    <div className="d-flex align-items-center tip"><FiRefreshCcw className="mr10" color="#35FF69" size={25} /> How many times you have cleared this slot.</div>
+                    {/*<div className="d-flex align-items-center tip"><div className="mr10 position mini-position position_reset" /> Once this position is filled, all slots will clear out.</div>*/}
+                    <div className="d-flex align-items-center tip"><FaUsers className="mr10" color="#272727" size={25} /> Users you have earned from.</div>
+                    <div className="d-flex align-items-center tip"><FiRefreshCcw className="mr10" color="#272727" size={25} /> How many times you have completed and cleared this slot.</div>
                 </div>
             </div>
         </>
