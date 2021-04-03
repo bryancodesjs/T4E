@@ -92,10 +92,10 @@ function BackOfficeMain(props) {
                 <div className="container d-flex flex-column">
                     <BackOfficeStatusFor5x lang={lang} />
                     <BackOfficeStatusFor12x lang={lang} />
-                    <div className="d-flex justify-content-center refresh-wrap">
+                    {/*<div className="d-flex justify-content-center refresh-wrap">
                         <h3 className="whitext">App stuck or unresponsive?</h3>
                     <button id="refreshCog" className="refreshbtn" onClick={() => refresh()}>< FaCog/><span id="refresh1">Refresh</span></button>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
         </BackofficeContext.Provider>

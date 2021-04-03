@@ -6,6 +6,7 @@ import TronWeb from 'tronweb'
 import Utils from '../../Utils/Utils'
 import Loader from '../../Common/Loader'
 import { MyClockLoader } from '../../Common/Loader'
+import upgradeIcon from '../../assets/img/upgrade-tron-alliance-level.svg'
 
 let toggleLevel = true
 
@@ -167,21 +168,21 @@ function SubPart12X({ level, ammount, lang }) {
     const getSubActiveLevels = [...Array(numberOfSubActiveLevels)].map((e, i) => <div key={i} className="subposition position_active"></div>)
     const getNonSubActiveLevels = [...Array(8 - numberOfSubActiveLevels)].map((e, i) => <div key={i} className="subposition"></div>)
     const getBuyIcon = isBuyEnable ?
-        <i className="buy-iconX12 buy-icon" alt="buyIcon" onClick={() => FunBuyLevel(level, ammount)} ></i> :
-        <i className="buy-iconX12" alt="buyIcon"></i>
+        <i className="buy-icon5X buy-icon" alt="buyIcon" onClick={() => FunBuyLevel(level, ammount)} ><img src={upgradeIcon} alt="upgrade your license"/></i> :
+        <i className="buy-icon5X" alt="buyIcon"><img src={upgradeIcon} alt="upgrade your license"/></i>
 
     return (
-        <div className="matrix_box_x12">
+        <div className="matrix_box">
             <ToastContainerCust />
             <Loader active={isModalOpen} />
             <MyClockLoader active={buyLevelLoader} />
             {/* <!--single matrix box--> */}
             <div className="box_basket" style={{ position: "relative" }}>
-                <div className="box_number_x12" id="box_number_x12">{level}</div>
+                <div className="box_number" id="box_number_x12">{level}</div>
                 {isBuyVisible ? getBuyIcon : null}
-                <button className="btn btn-info basket_btn basket_active">{ammount} trx</button>
+                <button className="btn btn-info basket_btn basket_active"><span className="level-amount">{ammount} trx</span></button>
             </div>
-            <div className="box_positions_x12">
+            <div className="box_positions_x12 mt-3">
                 {getActiveLevels}
                 {getNonActiveLevels}
             </div>
@@ -190,7 +191,7 @@ function SubPart12X({ level, ammount, lang }) {
                 {getNonSubActiveLevels}
                 <div className="subposition reset-bg"></div>
             </div>
-            <div className="flow_lines">
+            {/*<div className="flow_lines">
                 <div className="flow_line line_one_x12"></div>
                 <div className="flow_line line_two_x12"></div>
                 <div className="flow_line line_three_x12"></div>
@@ -204,7 +205,7 @@ function SubPart12X({ level, ammount, lang }) {
                 <div className="flow_line line_eleven_x12"></div>
                 <div className="flow_line line_twelve_x12"></div>
                 <div className="flow_line line_thirteen_x12"></div>
-            </div>
+            </div>*/}
         </div>
     )
 }

@@ -4,9 +4,8 @@ import x12matrix from '../../assets/img/m2.png'
 
 function BackOfficeStatusFor12x(props) {
     return (
-        <div className="xwrap">
+        <div className="xwrap border bg-clear">
             <div className="title_container">
-                <img src={x12matrix} id="title_container_img" alt="x12matrix" />
                 <div className="boxes_wraper_x12">
                     {/* <!-- this wraps all the matrix boxes--> */}
                     <SubPart12X level={1} ammount={"200"} lang={props.lang && props.lang} />

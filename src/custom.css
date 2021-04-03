@@ -606,7 +606,6 @@ details summary {
   justify-content: space-around;
 }
 .matrix_box {
-  /*X5 MATRIX*/
   width: fit-content;
   margin: 20px;
   height: 127px;
@@ -619,11 +618,11 @@ details summary {
     left: -55px;
 }
 .matrix_box_x12 {
-  /*X12 MATRIX*/
-  width: 280px;
+  width: fit-content;
   margin: 20px;
-  max-height: 180px;
-  text-align: center;
+  height: 127px;
+  background-color: var(--bg-2);
+  padding: 0px 16px;
 }
 .basket_btn {
   width: 227px;
@@ -666,7 +665,6 @@ details summary {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 20px;
 }
 .position {
     width: 30px;
@@ -693,10 +691,10 @@ details summary {
 .subposition {
   width: 20px;
   height: 20px;
-  border: 1px solid #7cbc8c; /*THIS IS THE DEFAULT COLOR FOR UNNOCUPIED POSITIONS*/
+  border: 1px solid var(--lighter-accent); /*THIS IS THE DEFAULT COLOR FOR UNNOCUPIED POSITIONS*/
   border-radius: 50%;
   z-index: 2;
-  background-color: #0d0d40;
+  background-color: var(--lighter-accent);
 }
 .subposition_refresh {
   width: 20px;

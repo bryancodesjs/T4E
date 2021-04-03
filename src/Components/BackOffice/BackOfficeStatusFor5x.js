@@ -23,7 +23,7 @@ function BackOfficeStatusFor5x(props) {
                     <SubPart5X level={11} ammount={"204800"} lang={props.lang && props.lang} />
                     <SubPart5X level={12} ammount={"409600"} lang={props.lang && props.lang} />
                 </div>
-                <div className="Tips">
+                <div className="Tips p-4">
                     <div className="d-flex align-items-center tip"><div className="mr10 position mini-position position_active" /> You have earned commission from this slot.</div>
                     <div className="d-flex align-items-center tip"><div className="mr10 position mini-position" /> Available slot.</div>
                     <div className="d-flex align-items-center tip"><div className="mr10 position mini-position position_reset" /> Once this position is filled, all slots will clear out.</div>
