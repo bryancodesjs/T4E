@@ -7,9 +7,11 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import headimg from '../../assets/img/waifu.png'
 import minitron from '../../assets/img/mini-tron.png'
 import t4elogo from '../../assets/img/tron alliance logo.png'
+import languageIcon from '../../assets/img/translate.svg'
 import { Link } from 'react-router-dom';
-import { FaPowerOff } from "react-icons/fa";
+import { FaPowerOff, FaSignInAlt } from "react-icons/fa";
 import usaflag from '../../assets/img/usaflag.png'
+
 function LandingMian(props) {
     const propslang = props.location && props.location.state
     useEffect(() => {
@@ -40,48 +42,32 @@ function LandingMian(props) {
 
 
                 <div className="action-links">
+                    <img className="language-switch-icon mr-2" src={languageIcon} alt="language icon indicator"/>
                     <select name="lang" id="lang" value={lang} onChange={(e) => setLang(e.target.value)}>
                         <option value="English">English</option>
-                        <option value="Spanish">Spanish</option>
+                        <option value="Spanish">中文(简体)</option>
                     </select>
 
                     <Link to={{
                         pathname: "/back-office-main",
                         state: lang
                     }} className="navicon">
-                        <span className="naviconTXT">Home</span>
-                    </Link>
-
-                    <Link to={{
-                        pathname: "/back-office-main",
-                        state: lang
-                    }} className="navicon">
-                        <span className="naviconTXT">Dashboard</span>
+                        <span className="naviconTXT">
+                        {lang === 'English' ? "Dashboard" : "仪表板"}
+                        </span>
                     </Link>
 
                     <Link to={{
                         pathname: "/tutorial",
                         state: lang
                     }} className="navicon">
-                        <span className="naviconTXT">Tutorial</span>
-                    </Link>
-
-                    <Link to={{
-                        pathname: "/tutorial",
-                        state: lang
-                    }} className="navicon">
-                        <span className="naviconTXT">Tutorial</span>
-                    </Link>
-
-                    <Link to={{
-                        pathname: "/tutorial",
-                        state: lang
-                    }} className="navicon">
-                        <span className="naviconTXT">Tutorial</span>
+                        <span className="naviconTXT">
+                        {lang === 'English' ? "Tutorial" : "教程"}
+                        </span>
                     </Link>
 
                     <button className="btn btn-outline-success custombtn-3" onClick={() => navigateTo('/login')}>
-                            {lang === 'English' ? "Login" : "Login"}
+                            {lang === 'English' ? "Login" : "登录"}
                     </button>
                 </div>
             </div>
@@ -89,20 +75,20 @@ function LandingMian(props) {
             <div className="container text-center">
                 
                 
-                <div className="heading-content d-flex flex-row">
+                <div className="heading-content d-flex flex-row flex-wrap">
                     <div className="col-md-6 left-heading text-left">
                     <h1 className="mt-5 whitext heading-title"><strong>
-                        {lang === 'English' ? "Invest once. Earn TRX Forever" 
+                        {lang === 'English' ? "Share a single product. Earn limitless TRX." 
                         : 
-                        "Gana compartiendo oportunidades"}</strong></h1>
-                    <h3 className="whitext lightweight">
+                        "分享一个产品。赚取无限的TRX。"}</strong></h1>
+                    <p className="whitext lightweight">
                         {lang === 'English' ? 
                         "Join the first Smart Contract that pays you to share content on your Social Media Apps. Instant payouts, up to 100% commission." 
                         : 
-                        "Únete al primer Contrato Inteligente que te paga por compartir contenido en tus redes sociales. Pagos instantaneos, hasta 100% en comisiones."}</h3>
+                        "加入第一个智能合约，支付你在社交媒体应用程序上分享内容。即时支付，高达100%的佣金。"}</p>
                     <div className="mt-5">
                         <button className="btn btn-success custombtn" onClick={() => navigateTo('/registration')}>
-                            {lang === 'English' ? "Start Earning Now" : "Comenzar a Ganar"}
+                            {lang === 'English' ? "Start Earning Now" : "现在就开始挣钱"} <FaSignInAlt/>
                         </button>
                     </div>
                     </div>
@@ -117,41 +103,47 @@ function LandingMian(props) {
                         {lang === 'English' ?
                         "HYBRID COMMISSION PLAN"
                         :
-                        "PLAN DE COMISIONES HÍBRIDO"
+                        "混合佣金计划"
                         }
                     </h4>
-                    <div className="d-flex">
+                    <div className="d-flex flex-wrap">
                         <div className="col-lg-3 pb-4">
                             <h3>
                                 {lang === 'English' ?
                                     "Direct"
                                     :
-                                    "Directo"
+                                    "直接"
                                 }
                             </h3>
                             <h1>100% CPA</h1>
-                            <h4>
+                            <p>
                                 {lang === 'English' ?
                                     "For every direct affiliate"
                                     :
-                                    "Por cada afiliado directo"
+                                    "对于每一个直接关联公司"
                                 }
-                            </h4>
+                            </p>
                         </div>
                         <div className="col-lg-1 pb-4 d-flex align-items-center">
                             <h1>+</h1>
                         </div>
                         <div className="col-lg-4 pb-4">
-                            <h3>Residual</h3>
+                            <h3>
+                            {lang === 'English' ?
+                                    "Residual"
+                                    :
+                                    "剩余"
+                                }
+                            </h3>
                             <h1>20% CPA</h1>
-                            <h4>
+                            <p>
                                 {lang === 'English' ?
                                 "From up to 248,832‬ indirect affiliates in your team"
                                 :
-                                "De 248,832 posiciones disponibles en tu equipo"
+                                "从你的团队中最多有248,832个间接附属机构"
                                 }
                                 
-                            </h4>
+                            </p>
                         </div>
                         <div className="col-lg-3"></div>
                     </div>
@@ -169,16 +161,15 @@ function LandingMian(props) {
                 </div>
             </div>
             {/*<Counter lang={lang} />*/}
-            <br /><br /><br />
             <Matrix lang={lang} />
             {/*<Faq lang={lang} />*/}
                     <p className="text-center" id="address">
-                    {lang === 'English' ? "Support" : "Soporte"} : <a rel="noreferrer" target="_blank" href="mailto:support@xtron.online">support@xtron.online <FaExternalLinkAlt /></a>
+                    {lang === 'English' ? "Support" : "支持"} : <a rel="noreferrer" target="_blank" href="mailto:support@tronalliance.club">support@tronalliance.club <FaExternalLinkAlt /></a>
                     </p>
                     <p className="text-center" id="address">
-                    {lang === 'English' ? "Contract address" : "Direccion del contrato"} : <a rel="noreferrer" target="_blank" href={`https://tronscan.org/#/contract/TWDECXnA4oAGrDYRNS7ex1izx3Mgys9SRp/transactions`}>TWDECXnA4oAGrDYRNS7ex1izx3Mgys9SRp <FaExternalLinkAlt /></a>
+                    {lang === 'English' ? "Contract address" : "合同地址"} : <a rel="noreferrer" target="_blank" href={`https://tronscan.org/#/contract/TWDECXnA4oAGrDYRNS7ex1izx3Mgys9SRp/transactions`}>Contract address <FaExternalLinkAlt /></a>
                     </p>
-            <h4 className="text-center pb-5 signature">XTRON GLOBAL 2021</h4>
+            <h4 className="text-center pb-5 signature">创联俱乐部2021年</h4>
         </>
     )
 }

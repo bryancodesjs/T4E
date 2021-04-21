@@ -1,6 +1,9 @@
 import React from 'react'
-import { FaLink, FaMobileAlt, FaRegMoneyBillAlt, FaAngleRight } from "react-icons/fa";
+import { FaLink, FaMobileAlt, FaRegMoneyBillAlt, FaAngleRight, FaSignInAlt } from "react-icons/fa";
 import { useHistory } from 'react-router-dom';
+import join from './img/join.png';
+import share from './img/share.png';
+import earn from './img/earn.png';
 
 function Features(props) {
     const navigateTo = (url) => {
@@ -14,25 +17,25 @@ function Features(props) {
     return (
         <div className="container-fluid bg-gray">
             <div className="container text-center" id="features">
-            <h2 className="whitext heading-sub-title mt-5">
-                {lang === 'English' ? "Heading is placed here" : "Heading is placed here"}
-            </h2>
+            <h1 className="heading-sub-title mt-5"> 
+                    <span className="accent"><i>{lang === 'English'? "Monetize":"货币化"}</i></span> {lang === 'English'? "your social media":"你的社交媒体"}
+                </h1>
             
-            <p id="subtitle">
+            {/*<p id="subtitle">
                 {lang === 'English' ?
                     "Subtitle is placed here"
                     : 
                     "Subtitle is placed here"
                 }
-            </p>
+            </p>*/}
             <div className="features_wrap mt-5">
                 <div className="col-md-3 d-flex flex-column justify-content-start align-items-center">
-                    <FaLink className="feature-icon"/>
-                    <h3><span className="accent">1.</span> {lang === 'English'? "Get your link": "Obten tu link"}</h3>
+                    <img src={join} alt="join tron alliance"/>
+                    <h2 className="mt-3"><strong>{lang === 'English'? "Join": "加盟"}</strong></h2>
                     <p>{lang === 'English' ? 
-                    "Register to get your unique affiliate link and access to tons of marketing material."
+                    "Join millions of users worldwide who are earning money everyday using this proven business model."
                     :
-                    "Registrate para obtener tu link de afiliado único y herramientas promocionales."
+                    "加入全球数以百万计的用户，他们每天都在使用这种成熟的商业模式挣钱。"
                     }
                     </p>
                 </div>
@@ -40,13 +43,13 @@ function Features(props) {
                     <FaAngleRight/>
                 </div>
                 <div className="col-md-3 d-flex flex-column justify-content-start align-items-center">
-                    <FaMobileAlt className="feature-icon" />
-                    <h3><span className="accent">2.</span> {lang === 'English'? "Promote":"Promueve"}</h3>
+                    <img src={share} alt="share tron alliance"/>
+                    <h2 className="mt-3"><strong>{lang === 'English'? "Share":"分享"}</strong></h2>
                     <p>
                         {lang === 'English' ? 
-                        "Invite your friends and contacts by sharing your unique link on social media."
+                        "Share our products with your friends and audience. Our tools make it simple to share our products."
                         :
-                        "Invita a tus contactos y amigos compartiendo tu link único en tus redes."
+                        "与你的朋友和观众分享我们的产品。我们的工具使分享我们的产品变得简单。"
                         }
                         </p>
                 </div>
@@ -54,17 +57,17 @@ function Features(props) {
                     <FaAngleRight/>
                 </div>
                 <div className="col-md-3 d-flex flex-column justify-content-start align-items-center">
-                    <FaRegMoneyBillAlt className="feature-icon"/>
-                    <h3><span className="accent">3.</span> {lang === 'English'? "Start Earning" : "Gana"}</h3>
-                    <p>{lang === 'English' ? "Earn as soon as your affiliates sign up. Instant commissions." :
-                    "Gana dinero cada vez que una persona complete su registro y mejore su cuenta."
+                    <img src={earn} alt="earn trx money with tron alliance"/>
+                    <h2 className="mt-3"><strong>{lang === 'English'? "Earn" : "赚取"}</strong></h2>
+                    <p>{lang === 'English' ? "Earn 100% commission for every direct purchase and 20% commission per team purchase." :
+                    "每次直接购买赚取100%的佣金，每次团队购买赚取20%的佣金。"
                     }
                     </p>
                 </div>
             </div>
             <div className="container d-flex justify-content-center mb-5 mt-4">
-                <button className="btn btn-outline-success custombtn-2" onClick={() => navigateTo('/registration')}>
-                            {lang === 'English' ? "Join Now" : "Unirme Ahora"}
+                <button className="btn btn-success custombtn mb-5" onClick={() => navigateTo('/registration')}>
+                            {lang === 'English' ? "Join Now" : "现在加入"} <FaSignInAlt/>
                 </button>
             </div>
 
