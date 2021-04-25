@@ -152,13 +152,13 @@ function Registration(props) {
                                     lang === 'English' ?
                                         <h2>Register</h2>
                                         :
-                                        <h2>Registro</h2>
+                                        <h2>Pending for translation</h2>
                                 }
                                 {
                                     lang === 'English' ?
-                                        <h4>If you don't have a sponsor, use 1</h4>
+                                        <p>Please enter your sponsor's ID</p>
                                         :
-                                        <h4>Si no tiene un patrocinador, use 1</h4>
+                                        <p>Pending for translation</p>
                                 }
 
 

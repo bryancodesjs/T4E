@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Faq from './Faq'
 import Features from './Features'
 import Matrix from './Matrix'
 import { useHistory } from 'react-router-dom';
@@ -9,8 +8,7 @@ import minitron from '../../assets/img/mini-tron.png'
 import t4elogo from '../../assets/img/tron alliance logo.png'
 import languageIcon from '../../assets/img/translate.svg'
 import { Link } from 'react-router-dom';
-import { FaPowerOff, FaSignInAlt } from "react-icons/fa";
-import usaflag from '../../assets/img/usaflag.png'
+import { FaSignInAlt } from "react-icons/fa";
 
 function LandingMian(props) {
     const propslang = props.location && props.location.state
