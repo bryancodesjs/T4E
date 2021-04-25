@@ -61,6 +61,9 @@
 .icon-wrap {
   margin-right: 1rem;
 }
+.dash-card {
+  margin-bottom:10px;
+}
 .dash-card .inner {
   border-radius: 10px;
 }
