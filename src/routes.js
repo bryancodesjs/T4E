@@ -38,6 +38,12 @@ export const routes = [
         // guard: true,
         component: lazy(() => import('../src/Components/Tutorial/Tutorial'))
     },
+    {
+        exact: true,
+        path: '/faq',
+        // guard: true,
+        component: lazy(() => import('../src/Components/Faq/faq'))
+    },
 
     {
         component: () => <Redirect to="/" />

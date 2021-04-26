@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useHistory, useParams } from 'react-router-dom';
 import MyNav from '../BackOffice/Nav'
 import Banner from './Banner'
 import post from './post.png'
@@ -13,17 +13,38 @@ import teamCommission from './teamCommission.png'
 import directLicense from './direct-license-tutorial-img.png'
 import { FaChevronRight, FaChevronLeft, FaRegLightbulb, FaExternalLinkAlt } from "react-icons/fa";
 
+function stepOne() {
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('scrollTarget').scrollIntoView();
+}
+function backToStepOne() {
+    document.getElementById('step1').classList.add('active');
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('step1').classList.add('slide-in-left');
+}
 function stepTwo() {
+    document.getElementById('step3').classList.remove('active');
     document.getElementById('step1').classList.remove('active');
     document.getElementById('step2').classList.add('active');
     document.getElementById('step2').classList.add('slide-in-right');
     document.getElementById('scrollTarget').scrollIntoView(); //This ensures the viewport is scrolled top the top of the section
+}
+function backTwoStepTwo() {
+    document.getElementById('step2').classList.add('active');
+    document.getElementById('step3').classList.remove('active');
+    document.getElementById('step2').classList.add('slide-in-left');
 }
 function stepThree() {
     document.getElementById('step2').classList.remove('active');
     document.getElementById('step3').classList.add('active');
     document.getElementById('step3').classList.add('slide-in-right');
     document.getElementById('scrollTarget').scrollIntoView();
+}
+function backToStepThree() {
+    document.getElementById('step3').classList.add('active');
+    document.getElementById('step4').classList.remove('active');
+    document.getElementById('step3').classList.add('slide-in-left');
 }
 function stepFour() {
     document.getElementById('step3').classList.remove('active');
@@ -33,7 +54,7 @@ function stepFour() {
 }
 function Tutoril() {
     return (
-        <div class="" id="backofficewrap">
+        <div class="">
             <MyNav />
             <Banner />
             <div id="scrollTarget"></div>
@@ -104,7 +125,7 @@ function Tutoril() {
                             </div>
 
                             <div className="d-flex justify-content-between flex-wrap mb-5">
-                                <button className="btn btn-outline-primary"><FaChevronLeft /> How it works</button>
+                                <button className="btn btn-outline-primary" onClick={() => backToStepOne()}><FaChevronLeft /> How it works</button>
                                 <button className="btn btn-primary oge" onClick={() => stepThree()}>How to make money <FaChevronRight /></button>
                             </div>
 
@@ -142,7 +163,7 @@ function Tutoril() {
                                 </p>
                             </div>
                             <div className="d-flex justify-content-between flex-wrap mb-5">
-                                <button className="btn btn-outline-primary"><FaChevronLeft /> Registration</button>
+                                <button className="btn btn-outline-primary" onClick={() => backTwoStepTwo()}><FaChevronLeft /> Registration</button>
                                 <button className="btn btn-primary oge" onClick={() => stepFour()}>Boost your earnings <FaChevronRight /></button>
                             </div>
                         </div>
@@ -189,8 +210,10 @@ function Tutoril() {
                                 </p>
                             </div>
                             <div className="d-flex justify-content-between flex-wrap mb-5">
-                                <button className="btn btn-outline-primary"><FaChevronLeft /> How to make money</button>
-                                <Link to="/" className="btn btn-primary oge">FAQ <FaExternalLinkAlt/></Link>
+                                <button className="btn btn-outline-primary" onClick={() => backToStepThree()}><FaChevronLeft /> How to make money</button>
+                                <Link to={{
+                                    pathname: "/faq"
+                                }} className="btn btn-primary oge">FAQ <FaExternalLinkAlt/></Link>
                             </div>
                         </div>
                     </div>
