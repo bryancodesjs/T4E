@@ -434,23 +434,8 @@ p {
   float: right;
   margin-top: 3px;
 }
-details {
-  background: var(--purple-3);
-  padding: 10px 20px;
-  border-radius: 7px;
-  margin-top: 20px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  color: white;
-}
-details p {
-  margin-top: 10px;
-}
 .subtext {
   color: #3434d5;
-}
-details summary {
-  outline: none;
 }
 .userdefinition {
   display: flex;
@@ -961,6 +946,19 @@ details summary {
 }
 .reg-img {
   width: 270px;
+}
+details {
+  background-color: #f4f4f4;
+  width: 100%;
+  font-family: 'Open Sans';
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+details summary {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
 }
 /*Slide from the right*/
 .slide-in-right {
