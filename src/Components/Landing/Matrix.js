@@ -25,7 +25,7 @@ function Matrix(props) {
                     }
                 </i></p>
             </div>
-            <div className="matrix_boxes mt-5">
+            <div className="matrix_boxes mt-5 mb-5">
                 <div className="text-center p-50 col-md-5 d-flex justify-content-start bg-gray box-radius align-items-center commission-path">
                     <h2 className="">
                     {lang === 'English' ? 
@@ -68,16 +68,6 @@ function Matrix(props) {
                     "通过帮助你的推荐人带来更多的用户来建立一个团队，并且在你的团队中有人购买套餐时，你可以得到20%的分成。"}
                     </p>
                 </div>
-            </div>
-
-            <div className="matrix_title text-center mt-5">
-                <h2 className="heading-sub-title">
-                {lang === 'English' ? 
-                    "What to promote" 
-                    : 
-                    "推广什么"}
-                </h2>
-                <div></div>
             </div>
         </div>
     )

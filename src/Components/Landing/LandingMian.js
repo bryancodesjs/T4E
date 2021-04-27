@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Features from './Features'
 import Matrix from './Matrix'
+import Footer from '../Footer/footer'
 import { useHistory } from 'react-router-dom';
 import { FaExternalLinkAlt } from "react-icons/fa";
 import headimg from '../../assets/img/waifu.png'
@@ -166,14 +167,8 @@ function LandingMian(props) {
             </div>
             {/*<Counter lang={lang} />*/}
             <Matrix lang={lang} />
-            {/*<Faq lang={lang} />*/}
-                    <p className="text-center" id="address">
-                    {lang === 'English' ? "Support" : "支持"} : <a rel="noreferrer" target="_blank" href="mailto:support@tronalliance.club">support@tronalliance.club <FaExternalLinkAlt /></a>
-                    </p>
-                    <p className="text-center" id="address">
-                    {lang === 'English' ? "Contract address" : "合同地址"} : <a rel="noreferrer" target="_blank" href={`https://tronscan.org/#/contract/TWDECXnA4oAGrDYRNS7ex1izx3Mgys9SRp/transactions`}>Contract address <FaExternalLinkAlt /></a>
-                    </p>
-            <h4 className="text-center pb-5 signature">创联俱乐部2021年</h4>
+            
+            <Footer lang={lang}/>
         </>
     )
 }
