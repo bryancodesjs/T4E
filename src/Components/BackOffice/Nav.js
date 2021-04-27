@@ -18,32 +18,12 @@ function MyNav(lang) {
 
 
                 <div className="action-links">
-                    <Link to={{
-                        pathname: "/back-office-main",
-                        state: lang
-                    }} className="navicon">
-                        <span className="naviconTXT">Home</span>
-                    </Link>
-
+                    
                     <Link to={{
                         pathname: "/back-office-main",
                         state: lang
                     }} className="navicon">
                         <span className="naviconTXT">Dashboard</span>
-                    </Link>
-
-                    <Link to={{
-                        pathname: "/tutorial",
-                        state: lang
-                    }} className="navicon">
-                        <span className="naviconTXT">Tutorial</span>
-                    </Link>
-
-                    <Link to={{
-                        pathname: "/tutorial",
-                        state: lang
-                    }} className="navicon">
-                        <span className="naviconTXT">Tutorial</span>
                     </Link>
 
                     <Link to={{

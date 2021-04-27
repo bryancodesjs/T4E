@@ -206,9 +206,9 @@ function Login(props) {
                                 }
                                 {
                                     lang === 'English' ?
-                                        <h4>Enter your ID/Wallet to access your backoffice</h4>
+                                        <p>Enter your ID/Wallet to access your backoffice</p>
                                         :
-                                        <h4>Ingrese su ID/Wallet para acceder a su backoffice</h4>
+                                        <p>Ingrese su ID/Wallet para acceder a su backoffice</p>
                                 }
                                 <div className="login-switch-wrap">
                                     <button id="method1btn" className="switchbtn switchbtn-active" onClick={() => switchTo1()}>ID</button>

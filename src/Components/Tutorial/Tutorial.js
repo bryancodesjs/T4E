@@ -13,11 +13,6 @@ import teamCommission from './teamCommission.png'
 import directLicense from './direct-license-tutorial-img.png'
 import { FaChevronRight, FaChevronLeft, FaRegLightbulb, FaExternalLinkAlt } from "react-icons/fa";
 
-function stepOne() {
-    document.getElementById('step1').classList.add('active');
-    document.getElementById('step2').classList.remove('active');
-    document.getElementById('scrollTarget').scrollIntoView();
-}
 function backToStepOne() {
     document.getElementById('step1').classList.add('active');
     document.getElementById('step2').classList.remove('active');
@@ -77,22 +72,23 @@ function Tutoril() {
                             <p className="text-center"><i>This is all you need to make money. You receive your toolkit right after completing your registration.</i></p>
                             <div className="d-flex justify-content-between flex-wrap mb-5">
                                 <div className="col-lg-4 flex-column align-items-center d-flex">
-                                    <img className="direct-license-img" src={directLicense} alt="share, earn, repeat with tron alliance" />
-                                    <h2 className=""><strong>Your License</strong></h2>
-                                    <p>Lorem Ipsum Dolor Sit Amet</p>
+                                    <img className="direct-license-img" src={post} alt="share, earn, repeat with tron alliance" />
+                                    <h2 className=""><strong>Professional Content</strong></h2>
+                                    <p className="text-center">Choose among professionally designed flyers.</p>
                                 </div>
 
                                 <div className="col-lg-4 flex-column align-items-center d-flex">
                                     <img className="direct-license-img" src={linkImg} alt="share, earn, repeat with tron alliance" />
                                     <h2 className=""><strong>Your Link</strong></h2>
-                                    <p>Lorem Ipsum Dolor Sit Amet</p>
+                                    <p className="text-center">Append your link to the flyer and post it on your social media.</p>
                                 </div>
 
                                 <div className="col-lg-4 flex-column align-items-center d-flex">
-                                    <img className="direct-license-img" src={post} alt="share, earn, repeat with tron alliance" />
-                                    <h2 className=""><strong>Professional Content</strong></h2>
-                                    <p>Lorem Ipsum Dolor Sit Amet</p>
+                                    <img className="direct-license-img" src={directLicense} alt="share, earn, repeat with tron alliance" />
+                                    <h2 className=""><strong>Your License</strong></h2>
+                                    <p className="text-center">When a new user joins and buys his affiliate license, you earn an instant commission.</p>
                                 </div>
+
                             </div>
 
                             <div className="d-flex justify-content-end flex-wrap mb-5">

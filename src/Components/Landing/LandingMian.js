@@ -64,9 +64,15 @@ function LandingMian(props) {
                         </span>
                     </Link>
 
-                    <button className="btn btn-outline-success custombtn-3" onClick={() => navigateTo('/login')}>
-                            {lang === 'English' ? "Login" : "登录"}
-                    </button>
+                    <Link to={{
+                        pathname: "/login",
+                        state: lang
+                    }} className="navicon">
+                        <span className="naviconTXT">
+                        {lang === 'English' ? "Login" : "登录"} <FaSignInAlt/>
+                        </span>
+                    </Link>
+
                 </div>
             </div>
         </div>
@@ -75,23 +81,23 @@ function LandingMian(props) {
                 
                 <div className="heading-content d-flex flex-row flex-wrap">
                     <div className="col-md-6 left-heading text-left">
-                    <h1 className="mt-5 whitext heading-title"><strong>
+                    <h1 className="mt-5 whitext heading-title slide-in-left delay-1"><strong>
                         {lang === 'English' ? "Share a single product. Earn limitless TRX." 
                         : 
                         "分享一个产品。赚取无限的TRX。"}</strong></h1>
-                    <p className="whitext lightweight">
+                    <p className="whitext lightweight slide-in-left delay-2">
                         {lang === 'English' ? 
                         "Join the first Smart Contract that pays you to share content on your Social Media Apps. Instant payouts, up to 100% commission." 
                         : 
                         "加入第一个智能合约，支付你在社交媒体应用程序上分享内容。即时支付，高达100%的佣金。"}</p>
                     <div className="mt-5">
-                        <button className="btn btn-success custombtn" onClick={() => navigateTo('/registration')}>
+                        <button className="btn btn-success custombtn slide-in-left delay-3" onClick={() => navigateTo('/registration')}>
                             {lang === 'English' ? "Start Earning Now" : "现在就开始挣钱"} <FaSignInAlt/>
                         </button>
                     </div>
                     </div>
                     <div className="col-md-6 right-heading">
-                        <img className="heading-woman" src={headimg} alt="woman holding a phone earning tron"/>
+                        <img className="heading-woman slide-in-right delay-3" src={headimg} alt="woman holding a phone earning tron"/>
                     </div>
                 </div>
             </div>
@@ -105,7 +111,7 @@ function LandingMian(props) {
                         }
                     </h4>
                     <div className="d-flex flex-wrap">
-                        <div className="col-lg-3 pb-4">
+                        <div className="col-lg-3 pb-4 slide-in-bottom delay-3">
                             <h3>
                                 {lang === 'English' ?
                                     "Direct"
@@ -125,7 +131,7 @@ function LandingMian(props) {
                         <div className="col-lg-1 pb-4 d-flex align-items-center">
                             <h1>+</h1>
                         </div>
-                        <div className="col-lg-4 pb-4">
+                        <div className="col-lg-4 pb-4 slide-in-bottom delay-4">
                             <h3>
                             {lang === 'English' ?
                                     "Residual"
