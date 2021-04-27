@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/footer'
 import MyNav from '../BackOffice/Nav'
 import Banner from './Banner'
 import post from './post.png'
@@ -215,6 +216,7 @@ function Tutoril() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

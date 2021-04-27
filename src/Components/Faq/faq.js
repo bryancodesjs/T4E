@@ -1,5 +1,6 @@
 import React from 'react'
 import MyNav from '../BackOffice/Nav'
+import Footer from '../Footer/footer'
 import { FaChevronRight } from "react-icons/fa";
 
 function faq() {
@@ -10,7 +11,7 @@ function faq() {
                 <h1 className="text-center whitext mt-5 mb-5"><strong>Frequently Asked Questions</strong></h1>
             </div>
             <div className="container">
-                <div className="mt-5">
+                <div className="mt-5 mb-5">
                     <div className="details-wrap slide-in-bottom">
                         <details>
                             <summary>What is Tron Alliance?</summary>
@@ -101,6 +102,7 @@ function faq() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }

@@ -3,7 +3,6 @@ import Features from './Features'
 import Matrix from './Matrix'
 import Footer from '../Footer/footer'
 import { useHistory } from 'react-router-dom';
-import { FaExternalLinkAlt } from "react-icons/fa";
 import headimg from '../../assets/img/waifu.png'
 import minitron from '../../assets/img/mini-tron.png'
 import t4elogo from '../../assets/img/tron alliance logo.png'

@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 import BackOfficeSideDashboard from './BackOfficeSideDashboard'
 import BackOfficeStatusFor12x from './BackOfficeStatusFor12x'
 import BackOfficeStatusFor5x from './BackOfficeStatusFor5x'
+import Footer from '../Footer/footer'
 import MyNav from './Nav'
 /*import xtronLogo from '../../assets/img/xtronlong.png'*/
 /*import { Link } from 'react-router-dom';*/
@@ -97,6 +98,7 @@ function BackOfficeMain(props) {
                     <button id="refreshCog" className="refreshbtn" onClick={() => refresh()}>< FaCog/><span id="refresh1">Refresh</span></button>
                     </div>*/}
                 </div>
+                <Footer lang={lang}/>
             </div>
         </BackofficeContext.Provider>
     )
